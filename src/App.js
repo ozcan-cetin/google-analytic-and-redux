@@ -1,23 +1,16 @@
-import logo from './logo.svg';
+import { useSelector } from 'react-redux';
 import './App.css';
+import { Counter } from './features/counter/Counter';
+import Modal from './features/modal/Modal';
 
 function App() {
+  const { isOpen } = useSelector((state) => state.modal);
+  console.log(isOpen)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <Counter/>
+     <Modal/>
     </div>
   );
 }
